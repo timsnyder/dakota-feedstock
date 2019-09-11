@@ -41,13 +41,9 @@ requirements:
         - hdf5
         # - trilinos  # needs newer trilinos
     run:
-        - openmpi
         - boost-cpp
         - python
         - {{ pin_compatible("numpy") }}
-        - nomkl
-        - openblas
-        - gsl
         # - trilinos
 test:
     imports:
