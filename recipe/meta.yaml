@@ -38,6 +38,7 @@ requirements:
         - swig
         - doxygen
         - gsl
+        - hdf5
         # - trilinos  # needs newer trilinos
     run:
         - openmpi
