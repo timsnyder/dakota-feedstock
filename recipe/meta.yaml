@@ -47,6 +47,8 @@ requirements:
         - {{ pin_compatible("numpy") }}
         # - trilinos
 test:
+    requires:
+        - perl
     imports:
         - dakota
         - dakota.interfacing
