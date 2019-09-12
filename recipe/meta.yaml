@@ -16,7 +16,7 @@ source:
         - gsl.patch
         - python.patch
         - colin_boost170.patch
-        - test.patch
+        - tests.patch
 
 build:
     number: 1
