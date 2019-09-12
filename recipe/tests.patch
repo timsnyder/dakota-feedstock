@@ -1,0 +1,10 @@
+diff --git a/test/dakota_test.perl b/test/dakota_test.perl
+index e1715d9..cbde363 100755
+--- a/test/dakota_test.perl
++++ b/test/dakota_test.perl
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ # See documentation at end, or run dakota_test.perl --man
+ #  dakota_test.perl [options] [filename(s)] [test_number]
