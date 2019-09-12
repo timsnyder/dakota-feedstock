@@ -53,7 +53,7 @@ test:
         - dakota.interfacing.dprepro
         - pysurfpack
     commands:
-        - $PREFIX/share/dakota/dakota_test.perl --label-regex=AcceptanceTest
+        - $PREFIX/share/dakota/test/dakota_test.perl --label-regex=AcceptanceTest
 
 
 about:
