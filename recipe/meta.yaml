@@ -8,8 +8,7 @@ package:
 
 source:
     fn: dakota{{ version }}.tar.gz
-    url: https://github.com/looooo/dakota-feedstock/releases/download/{{ version }}/dakota-{{ version }}-release-public.src.tar.gz
-    # url: https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-{{ version }}-release-public.src.tar.gz
+    url: https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-{{ version }}-release-public.src.tar.gz
     sha256: {{ sha256sum }}
     patches:
         - surfpack_py_bindings.patch
