@@ -1,0 +1,8 @@
+libblas:
+  - 3.8 *openblas
+libcblas:
+  - 3.8 *openblas
+liblapack:
+  - 3.8.0 *openblas
+liblapacke:
+  - 3.8.0 *openblas
