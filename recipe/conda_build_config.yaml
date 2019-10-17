@@ -1,8 +1,8 @@
 libblas:
-  - 3.8 *openblas
+  - 3.8 *netlib
 libcblas:
-  - 3.8 *openblas
+  - 3.8 *netlib
 liblapack:
-  - 3.8.0 *openblas
+  - 3.8.0 *netlib
 liblapacke:
-  - 3.8.0 *openblas
+  - 3.8.0 *netlib

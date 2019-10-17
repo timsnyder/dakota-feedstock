@@ -1,0 +1,25 @@
+environment
+    tabular_data
+        tabular_data_file = 'rosenbrock_uq_sampling.dat'
+
+method
+    sampling
+        sample_type lhs
+        samples = 1000
+        seed = 98765
+        response_levels = 0.5
+
+variables
+    normal_uncertain = 2
+        descriptors   = 'x1' 'x2'
+        means         =  0.  0.
+        std_deviation =  0.1  0.1
+
+interface
+    python
+        numpy
+        analysis_drivers = 'rosenbrock:rosenbrock'
+
+responses
+    response_functions = 1
+    no_gradients no_hessians

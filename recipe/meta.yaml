@@ -33,6 +33,7 @@ requirements:
         - boost-cpp
         - libblas
         - libcblas
+        - liblapack
         - python
         - perl
         - numpy
@@ -47,8 +48,12 @@ requirements:
         - {{ pin_compatible("numpy") }}
         # - trilinos
 test:
+    files:
+        - UQ.in
+        - rosenbrock.py
     requires:
         - perl
+        - liblapack 3.8 *openblas
     imports:
         - dakota
         - dakota.interfacing
@@ -56,7 +61,7 @@ test:
         - pysurfpack
     commands:
         - $PREFIX/share/dakota/test/dakota_test.perl --label-regex=AcceptanceTest
-
+        - dakota -i UQ.in
 
 about:
     home: https://dakota.sandia.gov
