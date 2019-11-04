@@ -23,7 +23,7 @@ gsl:
 hdf5:
 - 1.10.5
 libblas:
-- 3.8 *opeblas
+- 3.8 *openblas
 libcblas:
 - 3.8 *openblas
 liblapack:
