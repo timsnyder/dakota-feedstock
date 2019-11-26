@@ -1,6 +1,6 @@
 {% set name = "dakota" %}
-{% set version = "6.10" %}
-{% set sha256sum = "2a0d2f426c0f369cfa3c0b341061553e651a6f60377a59f83251d9d3c3821bad" %}
+{% set version = "6.11" %}
+{% set sha256sum = "d38bbfccba4ff5f2187bdbb45633e269ef4d9f68631a17a52b4d05b5f9b75f65" %}
 
 package:
     name: {{ name }}
@@ -14,11 +14,11 @@ source:
         - surfpack_py_bindings.patch
         - gsl.patch
         - python.patch
-        - colin_boost170.patch
+        # - colin_boost170.patch
         - tests.patch
 
 build:
-    number: 2
+    number: 0
     skip: true  # [win or osx or py<37]
 
 requirements:
