@@ -1,84 +1,84 @@
 {% set name = "dakota" %}
-{% set version = "6.11" %}
-{% set sha256sum = "d38bbfccba4ff5f2187bdbb45633e269ef4d9f68631a17a52b4d05b5f9b75f65" %}
+{% set version = "6.12" %}
+{% set sha256sum = "4d69f9cbb0c7319384ab9df27643ff6767eb410823930b8fbd56cc9de0885bc9" %}
 
 package:
-    name: {{ name }}
-    version: {{ version }}
+  name: {{ name }}
+  version: {{ version }}
 
 source:
-    fn: dakota{{ version }}.tar.gz
-    url: https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-{{ version }}-release-public.src.tar.gz
-    sha256: {{ sha256sum }}
-    patches:
-        - surfpack_py_bindings.patch
-        - gsl.patch
-        - python.patch
+  fn: dakota{{ version }}.tar.gz
+  url: https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-{{ version }}-release-public.src.tar.gz
+  sha256: {{ sha256sum }}
+  patches:
+    - surfpack_py_bindings.patch
+    - gsl.patch
+    - python.patch
         # - colin_boost170.patch
-        - tests.patch
+    - tests.patch
 
 build:
-    number: 3
-    skip: true  # [win or osx or py<37]
+  number: 0
+  skip: true  # [win or osx or py<37]
 
 requirements:
-    build:
-        - cmake
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-        - {{ compiler('fortran') }}
-    host:
-        - openmpi
-        - pybind11
-        - boost-cpp
-        - libblas
-        - libcblas
-        - liblapack
-        - python
-        - perl
-        - numpy
-        - swig
-        - doxygen
-        - gsl
-        - hdf5
+  build:
+    - cmake
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}
+  host:
+    - openmpi
+    - pybind11
+    - boost-cpp
+    - libblas
+    - libcblas
+    - liblapack
+    - python
+    - perl
+    - numpy
+    - swig
+    - doxygen
+    - gsl
+    - hdf5
         # - trilinos  # needs newer trilinos
-    run:
-        - boost-cpp
-        - python
-        - {{ pin_compatible("numpy") }}
+  run:
+    - boost-cpp
+    - python
+    - {{ pin_compatible("numpy") }}
         # - trilinos
 test:
-    files:
-        - UQ.in
-        - rosenbrock.py
-    requires:
-        - perl
-        - liblapack 3.8 *openblas
-    imports:
-        - dakota
-        - dakota.interfacing
-        - dakota.interfacing.dprepro
-        - pysurfpack
-    commands:
-        - $PREFIX/share/dakota/test/dakota_test.perl --label-regex=AcceptanceTest
-        - dakota -i UQ.in
+  files:
+    - UQ.in
+    - rosenbrock.py
+  requires:
+    - perl
+    - liblapack 3.8 *openblas
+  imports:
+    - dakota
+    - dakota.interfacing
+    - dakota.interfacing.dprepro
+    - pysurfpack
+  commands:
+    - $PREFIX/share/dakota/test/dakota_test.perl --label-regex=AcceptanceTest
+    - dakota -i UQ.in
 
 about:
-    home: https://dakota.sandia.gov
-    license: LGPL-3.0
-    license_family: LGPL
-    license_file: LICENSE
-    summary: 'The Dakota project delivers software for optimization and uncertainty quantification.'
-    description: |
-        The Dakota project delivers both state-of-the-art research and robust, 
-        usable software for optimization and UQ. Broadly, the Dakota software's 
-        advanced parametric analyses enable design exploration, model calibration, 
-        risk analysis, and quantification of margins and uncertainty with computational
-        models. The Dakota toolkit provides a flexible, extensible interface 
-        between such simulation codes and its iterative systems analysis methods.
-    doc_url: https://dakota.sandia.gov/content/610-reference-manual
-    dev_url: https://dakota.sandia.gov/
+  home: https://dakota.sandia.gov
+  license: LGPL-3.0
+  license_family: LGPL
+  license_file: LICENSE
+  summary: The Dakota project delivers software for optimization and uncertainty quantification.
+  description: |
+    The Dakota project delivers both state-of-the-art research and robust, 
+    usable software for optimization and UQ. Broadly, the Dakota software's 
+    advanced parametric analyses enable design exploration, model calibration, 
+    risk analysis, and quantification of margins and uncertainty with computational
+    models. The Dakota toolkit provides a flexible, extensible interface 
+    between such simulation codes and its iterative systems analysis methods.
+  doc_url: https://dakota.sandia.gov/content/610-reference-manual
+  dev_url: https://dakota.sandia.gov/
 
 extra:
-    recipe-maintainers:
-        - looooo
+  recipe-maintainers:
+    - looooo
