@@ -1,6 +1,6 @@
 {% set name = "dakota" %}
-{% set version = "6.12" %}
-{% set sha256sum = "4d69f9cbb0c7319384ab9df27643ff6767eb410823930b8fbd56cc9de0885bc9" %}
+{% set version = "6.13" %}
+{% set sha256sum = "bca9448ebbcc5a29226eab2abbd9e5e87ccaef6818658edb64588f234bf7bd1b" %}
 
 package:
   name: {{ name }}
@@ -12,14 +12,14 @@ source:
   sha256: {{ sha256sum }}
   patches:
     - surfpack_py_bindings.patch
-    - gsl.patch
     - python.patch
     - tests.patch
     - link_librt.patch
+    # - use_external_pybind11.patch
 
 build:
-  number: 1
-  skip: true  # [win or osx or py<37]
+  number: 0
+  skip: true  # [win or osx or py<38]
 
 requirements:
   build:
@@ -29,7 +29,7 @@ requirements:
     - {{ compiler('fortran') }}
   host:
     - openmpi
-    - pybind11
+    # - pybind11
     - boost-cpp
     - libblas
     - libcblas
