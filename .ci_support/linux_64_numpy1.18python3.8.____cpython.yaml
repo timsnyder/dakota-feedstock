@@ -21,7 +21,7 @@ fortran_compiler:
 fortran_compiler_version:
 - '7'
 gsl:
-- '2.6'
+- '2.7'
 hdf5:
 - 1.10.6
 libblas:
@@ -31,7 +31,7 @@ libcblas:
 liblapack:
 - 3.8.0 *openblas
 numpy:
-- '1.17'
+- '1.18'
 openmpi:
 - '4'
 perl:
