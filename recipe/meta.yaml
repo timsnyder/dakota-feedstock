@@ -8,7 +8,7 @@ package:
 source:
   fn: dakota{{ version }}.tar.gz
   url: https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-{{ version }}-public-rhel7.Linux_.x86_64-cli.tar.gz
-  sha256: c9a163c64c0e971e0e7476b65f452a5ce6f3bc9ef3386ad61fd0f979f1dbfc14
+  sha256: 4a18ea19cd5e762db29b770552a9927c52bcd2f6c76d37044ba3540dc4e11d7a
   patches:
     # - surfpack_py_bindings.patch
     # - python.patch
