@@ -7,6 +7,7 @@ if [ `uname` = "Linux" ]; then
     # there is a problem with NCSUopt when compiled with -fopenmp
     # so set the fflags manually:
     FFLAGS="-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe"
+    LDFLAGS="${LDFLAGS} -lrt"
 fi
 
 cmake -G "Ninja" \
