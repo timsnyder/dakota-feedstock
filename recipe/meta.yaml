@@ -7,8 +7,8 @@ package:
 
 source:
   fn: dakota{{ version }}.tar.gz
-  url: https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-{{ version }}-release-public-src-gui.zip
-  sha256: be324f36d848b26f53c3ba40b015137a8856eec3485443b9a74100b5bfbdf9ad
+  url: https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-{{ version }}-public-src-cli.tar.gz
+  sha256: 49684ade2a937465d85b0fc69c96408be38bc1603ed2e7e8156d93eee3567d2f
   patches:
     # - surfpack_py_bindings.patch
     # - python.patch
