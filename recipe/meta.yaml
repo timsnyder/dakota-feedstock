@@ -1,5 +1,5 @@
 {% set name = "dakota" %}
-{% set version = "6.15.0" %}
+{% set version = "6.16.0" %}
 
 package:
   name: {{ name }}
@@ -7,8 +7,8 @@ package:
 
 source:
   fn: dakota{{ version }}.tar.gz
-  url: https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-{{ version }}-public-rhel7.Linux_.x86_64-cli.tar.gz
-  sha256: 4a18ea19cd5e762db29b770552a9927c52bcd2f6c76d37044ba3540dc4e11d7a
+  url: https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-{{ version }}-release-public-src-gui.zip
+  sha256: be324f36d848b26f53c3ba40b015137a8856eec3485443b9a74100b5bfbdf9ad
   patches:
     # - surfpack_py_bindings.patch
     # - python.patch
