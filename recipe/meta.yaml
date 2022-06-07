@@ -10,11 +10,11 @@ source:
   url: https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-{{ version }}-public-src-cli.tar.gz
   sha256: 49684ade2a937465d85b0fc69c96408be38bc1603ed2e7e8156d93eee3567d2f
   patches:
-    # - surfpack_py_bindings.patch
-    # - python.patch
-    # - tests.patch
-    - link_librt.patch
-    # - use_external_pybind11.patch
+    # - patches/surfpack_py_bindings.patch
+    # - patches/python.patch
+    # - patches/tests.patch
+    - patches/link_librt.patch
+    # - patches/use_external_pybind11.patch
 
 build:
   number: 0
