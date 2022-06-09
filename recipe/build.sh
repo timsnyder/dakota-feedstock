@@ -32,3 +32,5 @@ cmake -G "Ninja" \
       -D DAKOTA_PYTHON_SURROGATES:BOOL=ON \
       ..
 ninja install
+
+chmod u+x $PREFIX/share/dakota/test/dakota_test.perl
