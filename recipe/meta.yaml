@@ -12,7 +12,7 @@ source:
   patches:
     # - patches/surfpack_py_bindings.patch
     - patches/python.patch
-    # - patches/tests.patch
+    - patches/tests.patch
     - patches/link_librt.patch
     # - patches/use_external_pybind11.patch
 
