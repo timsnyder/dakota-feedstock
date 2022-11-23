@@ -1,6 +1,7 @@
 import numpy as np
 
-def rosenbrock(**kwargs):
+def rosenbrock(*args, **kwargs):
+    print(args)
     x = kwargs['cv']     # continuous variables
     ASV = kwargs['asv']  # active set vector (ASV)
 
