@@ -26,6 +26,8 @@ mkdir -p build
 cd build
 
 if [ `uname` = "Linux" ]; then
+    # -fvisibility-inlines-hidden causes trouble with dakota
+    CXXFLAGS="${CXXFLAGS/-fvisibility-inlines-hidden/}"
     # there is a problem with NCSUopt when compiled with -fopenmp
     # so set the fflags manually:
     FFLAGS="-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe"
@@ -42,7 +44,7 @@ cmake -G "Ninja" \
       -D DAKOTA_PYTHON_DIRECT_INTERFACE:BOOL=ON \
       -D DAKOTA_PYTHON_DIRECT_INTERFACE_NUMPY:BOOL=ON \
       -D HAVE_X_GRAPHICS:BOOL=OFF \
-      -D DAKOTA_HAVE_MP:BOOL=ON \
+      -D DAKOTA_HAVE_MPI:BOOL=ON \
       -D DAKOTA_HAVE_HDF5:BOOL=ON \
       -D HAVE_QUESO:BOOL=ON \
       -D DAKOTA_HAVE_GSL=ON \
