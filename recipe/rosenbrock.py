@@ -1,9 +1,8 @@
 import numpy as np
 
-def rosenbrock(*args, **kwargs):
-    print(args)
-    x = kwargs['cv']     # continuous variables
-    ASV = kwargs['asv']  # active set vector (ASV)
+def rosenbrock(params):
+    x = params['cv']     # continuous variables
+    ASV = params['asv']  # active set vector (ASV)
 
     f0 = x[1] - x[0]*x[0]
     f1 = 1 - x[0]
