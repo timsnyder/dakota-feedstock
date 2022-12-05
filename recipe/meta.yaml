@@ -5,8 +5,16 @@ package:
   name: {{ name }}
   version: {{ version }}
 
-# source section handled in build.sh so that we can work around https://github.com/orgs/snl-dakota/discussions/12
-# by downloading insecurely and checking the sha256 ourselves
+source:
+  fn: dakota{{ version }}.tar.gz
+  url: https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-{{ version }}-public-src-cli.tar.gz
+  sha256: 49684ade2a937465d85b0fc69c96408be38bc1603ed2e7e8156d93eee3567d2f
+  patches:
+    # - patches/surfpack_py_bindings.patch
+    - patches/python.patch
+    - patches/tests.patch
+    - patches/link_librt.patch
+    # - patches/use_external_pybind11.patch
 
 build:
   number: 0
@@ -14,10 +22,6 @@ build:
 
 requirements:
   build:
-    - curl
-    - coreutils
-    - tar
-    - patch
     - cmake
     - ninja
     - {{ compiler('c') }}
