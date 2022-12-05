@@ -27,9 +27,7 @@ requirements:
     - openmpi
     # - pybind11
     - boost-cpp
-    - libblas
-    - libcblas
-    - liblapack
+    - {{ blas_impl }}
     - python
     - perl
     - numpy
@@ -39,6 +37,10 @@ requirements:
     - hdf5
         # - trilinos  # needs newer trilinos
   run:
+    - libblas * *{{ blas_impl }}
+    - libcblas * *{{ blas_impl }}
+    - liblapack * *{{ blas_impl }}
+    - {{ blas_impl }}
     - boost-cpp
     - python
     - {{ pin_compatible("numpy") }}
