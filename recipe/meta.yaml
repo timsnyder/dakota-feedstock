@@ -34,7 +34,7 @@ requirements:
     - boost-cpp
     - libblas * *{{ blas_impl }}
     - libcblas * *{{ blas_impl }}
-    - liblapack * *{{ blas_impl }}
+    - liblapack
     - {{ blas_impl }}
     - python
     - perl
@@ -47,7 +47,7 @@ requirements:
   run:
     - libblas * *{{ blas_impl }}
     - libcblas * *{{ blas_impl }}
-    - liblapack * *{{ blas_impl }}
+    - liblapack
     - {{ blas_impl }}
     - boost-cpp
     - python
