@@ -18,7 +18,6 @@ source:
     - patches/python.patch
     - patches/tests.patch
     - patches/link_librt.patch
-    - patches/boost_dll_import_symbol.patch
     # - patches/use_external_pybind11.patch
 
 build:
