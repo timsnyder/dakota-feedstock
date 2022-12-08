@@ -11,7 +11,7 @@ package:
 
 source:
   fn: dakota{{ version }}.tar.gz
-  url: https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-{{ version }}-public-src-cli.tar.gz
+  url: https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-{{ version }}-release-public-src-cli.tar.gz
   sha256: a6045784426b75d4981efcc1f243a5cd74dfcf29d4572927d6162a82a12757c6
   patches:
     # - patches/surfpack_py_bindings.patch
