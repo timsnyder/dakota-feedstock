@@ -1,5 +1,5 @@
 {% set name = "dakota" %}
-{% set version = "6.16.0" %}
+{% set version = "6.17.0" %}
 
 {% if blas_impl is undefined %}
 {% set blas_impl = "openblas" %}
@@ -12,7 +12,7 @@ package:
 source:
   fn: dakota{{ version }}.tar.gz
   url: https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-{{ version }}-public-src-cli.tar.gz
-  sha256: 49684ade2a937465d85b0fc69c96408be38bc1603ed2e7e8156d93eee3567d2f
+  sha256: a6045784426b75d4981efcc1f243a5cd74dfcf29d4572927d6162a82a12757c6
   patches:
     # - patches/surfpack_py_bindings.patch
     - patches/python.patch
@@ -84,7 +84,7 @@ about:
     risk analysis, and quantification of margins and uncertainty with computational
     models. The Dakota toolkit provides a flexible, extensible interface 
     between such simulation codes and its iterative systems analysis methods.
-  doc_url: https://dakota.sandia.gov/content/610-reference-manual
+  doc_url: https://dakota.sandia.gov/sites/default/files/docs/{{ version }}-release/user-html/
   dev_url: https://dakota.sandia.gov/
 
 extra:
