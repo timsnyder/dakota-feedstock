@@ -1,6 +1,10 @@
 {% set name = "dakota" %}
 {% set version = "6.16.0" %}
 
+{% if blas_impl is undefined %}
+{% set blas_impl = "openblas" %}
+{% endif %}
+
 package:
   name: {{ name }}
   version: {{ version }}
