@@ -1,3 +1,5 @@
+blas_impl:
+- mkl
 boost_cpp:
 - 1.78.0
 c_compiler:
@@ -24,10 +26,6 @@ gsl:
 - '2.7'
 hdf5:
 - 1.12.1
-libblas:
-- 3.9 *netlib
-libcblas:
-- 3.9 *netlib
 liblapack:
 - 3.9 *netlib
 numpy:
