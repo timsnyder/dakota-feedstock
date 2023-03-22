@@ -1,11 +1,11 @@
-About dakota-feedstock
-======================
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dakota-feedstock/blob/main/LICENSE.txt)
+About dakota
+============
 
 Home: https://dakota.sandia.gov
 
-Package license: LGPL-2.1-or-later
+Package license: LGPL-3.0
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dakota-feedstock/blob/main/LICENSE.txt)
 
 Summary: The Dakota project delivers software for optimization and uncertainty quantification.
 
