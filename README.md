@@ -1,11 +1,11 @@
-About dakota
-============
+About dakota-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dakota-feedstock/blob/main/LICENSE.txt)
 
 Home: https://dakota.sandia.gov
 
 Package license: LGPL-2.1-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dakota-feedstock/blob/main/LICENSE.txt)
 
 Summary: The Dakota project delivers software for optimization and uncertainty quantification.
 
@@ -231,4 +231,5 @@ Feedstock Maintainers
 =====================
 
 * [@looooo](https://github.com/looooo/)
+* [@timsnyder](https://github.com/timsnyder/)
 
