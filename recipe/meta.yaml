@@ -1,6 +1,9 @@
 {% set name = "dakota" %}
-{% set version = "6.14.0" %}
-{% set sha256sum = "c3479ce49fc7a79df529ed052e809e4af2755f907734c802ccd609bbee220f8c" %}
+{% set version = "6.16.0" %}
+
+{% if blas_impl is undefined %}
+{% set blas_impl = "openblas" %}
+{% endif %}
 
 package:
   name: {{ name }}
@@ -8,22 +11,24 @@ package:
 
 source:
   fn: dakota{{ version }}.tar.gz
-  url: https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-{{ version }}-release-public-src-cli.tar.gz
-  sha256: {{ sha256sum }}
+  url: https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-{{ version }}-public-src-cli.tar.gz
+  sha256: 49684ade2a937465d85b0fc69c96408be38bc1603ed2e7e8156d93eee3567d2f
   patches:
-    - surfpack_py_bindings.patch
-    - python.patch
-    - tests.patch
-    - link_librt.patch
-    # - use_external_pybind11.patch
+    # - patches/surfpack_py_bindings.patch
+    - patches/python.patch
+    - patches/tests.patch
+    - patches/link_librt.patch
+    - patches/boost_dll_import_symbol.patch
+    # - patches/use_external_pybind11.patch
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win or osx or py<38]
 
 requirements:
   build:
     - cmake
+    - ninja
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
@@ -31,9 +36,10 @@ requirements:
     - openmpi
     # - pybind11
     - boost-cpp
-    - libblas
-    - libcblas
+    - libblas * *{{ blas_impl }}
+    - libcblas * *{{ blas_impl }}
     - liblapack
+    - {{ blas_impl }}
     - python
     - perl
     - numpy
@@ -43,6 +49,10 @@ requirements:
     - hdf5
         # - trilinos  # needs newer trilinos
   run:
+    - libblas * *{{ blas_impl }}
+    - libcblas * *{{ blas_impl }}
+    - liblapack
+    - {{ blas_impl }}
     - boost-cpp
     - python
     - {{ pin_compatible("numpy") }}
@@ -53,19 +63,17 @@ test:
     - rosenbrock.py
   requires:
     - perl
-    - liblapack 3.8 *openblas
   imports:
     - dakota
     - dakota.interfacing
     - dakota.interfacing.dprepro
-    - pysurfpack
   commands:
     - $PREFIX/share/dakota/test/dakota_test.perl --label-regex=AcceptanceTest
     - dakota -i UQ.in
 
 about:
   home: https://dakota.sandia.gov
-  license: LGPL-3.0
+  license: LGPL-2.1-or-later
   license_family: LGPL
   license_file: LICENSE
   summary: The Dakota project delivers software for optimization and uncertainty quantification.
